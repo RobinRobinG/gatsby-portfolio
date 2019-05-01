@@ -12,9 +12,8 @@ const IndexPage = () => {
             <div className='columns'>
               <div className='column is-10 is-offset-1'>
                 <div className='section'>
-                  <h1 className='title'>
-                    title
-                  </h1>
+                  <h1 className='title is-1 has-text-centered'>Hello! I'm Robin!</h1>
+                  <p className='subtitle is-4 has-text-centered margin-top-15'>UI/UX Designer | Full Stack Devekoper</p>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import headerStyles from './header.module.scss'
 
 const Header = ({toggleNavbar, isActive}) => {
   
@@ -18,7 +19,7 @@ const Header = ({toggleNavbar, isActive}) => {
     <nav className='navbar is-fixed-top' aria-label='main navigation'>
       <div className='navbar-brand'>
         <Link to='/' className='navbar-item'>
-          <strong>{data.site.siteMetadata.title}</strong>
+          <strong className={headerStyles.siteTitle}>{data.site.siteMetadata.title}</strong>
         </Link>
         <button
           className={`button navbar-burger ${isActive ? 'is-active' : ''}`}
