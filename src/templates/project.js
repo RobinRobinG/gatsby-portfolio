@@ -15,7 +15,6 @@ export const query = graphql`
     }
    }
 `
-
 const Project = (props) => {
   const options = {
     renderNode: {
@@ -29,9 +28,35 @@ const Project = (props) => {
   return (
     <Layout>
       <Head pageTitle={props.data.contentfulProject.title}/>
-      <h1>{props.data.contentfulProject.title}</h1>
-      <h3>{props.data.contentfulProject.createdDate}</h3>
-      {documentToReactComponents(props.data.contentfulProject.body.json, options)}
+
+      <section className='hero is-primary is-bold is-medium'>
+        <div className='hero-body'>
+          <div className='container'>
+            <div className='columns'>
+              <div className='column is-10 is-offset-1'>
+                <div className='section'>
+                  <h1 className='title'>{props.data.contentfulProject.title}</h1>
+                  <h3>{props.data.contentfulProject.createdDate}</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='section section--gradient'>
+        <div className='container'>
+
+          <div className='section'>
+            <div className='columns'>
+              <div className='column is-10 is-offset-1'>
+                <div className='content'>
+                  {documentToReactComponents(props.data.contentfulProject.body.json, options)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

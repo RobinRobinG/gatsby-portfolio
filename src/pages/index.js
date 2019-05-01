@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/head'
 
@@ -7,10 +6,35 @@ const IndexPage = () => {
   return (
     <Layout>
       <Head pageTitle="Home"/>
-      <h1>Hello</h1>
-      <h2>I am Robin, a full-stack developer from Seattle.</h2>
-      <hr />
-      <p>Need a developer? <Link to="/contact">Contact me.</Link></p>
+      <section className='hero is-primary is-bold is-medium'>
+        <div className='hero-body'>
+          <div className='container'>
+            <div className='columns'>
+              <div className='column is-10 is-offset-1'>
+                <div className='section'>
+                  <h1 className='title'>
+                    title
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className='section section--gradient'>
+        <div className='container'>
+          <div className='section'>
+            <div className='columns'>
+              <div className='column is-10 is-offset-1'>
+                <div className='content'>
+                  <h3 className='has-text-weight-semibold is-size-2'>heading</h3>
+                  <p>description</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

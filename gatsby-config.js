@@ -1,7 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Robin Portfolio Site!',
-    author: 'Jellycat'
+    title: `Robin's Portfoilo`,
+    author: `Robin Guan`,
+    description: `This is Robin's portfolio site.`,
+    keywords: `Explorer, Designer, Developer, Full-stack, CSS, HTML, JS, Javascript, React, GraphQL, Gatsby, Nodejs, Express, MongoDB, MySQL, C#, .NetCore, Entity, Python, Django, Flask`,
+    github: `https://github.com/robinrobing`,
+    siteUrl: `https://www.example.com`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -29,12 +33,33 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 750,
+              maxWidth: 1024,
               linkImagesToOriginal: false
             }
           }
         ]
       }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'Hello Robin',
+        background_color: '#ffffff',
+        theme_color: '#00d1b2',
+        display: 'standalone',
+        icons: [{
+            src: `/icons/icon-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/icons/icon-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+      },
     }
+
   ]
 }

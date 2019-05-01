@@ -1,33 +1,44 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import './header.module.scss'
-import headerStyles from './header.module.scss'
 
-const Header = () => {
+const Header = ({toggleNavbar, isActive}) => {
+  
   const data = useStaticQuery(graphql`
-  query {
-    site {
-      siteMetadata {
-        title
+    query {
+      site {
+        siteMetadata {
+          title
+        }
       }
     }
-  }
   `)
+
   return (
-    <header className={headerStyles.header}>
-      <h1>
-        <Link to='/' className={headerStyles.title}>
-        {data.site.siteMetadata.title}
+
+    <nav className='navbar is-fixed-top' aria-label='main navigation'>
+      <div className='navbar-brand'>
+        <Link to='/' className='navbar-item'>
+          <strong>{data.site.siteMetadata.title}</strong>
         </Link>
-      </h1>
-      <ul className={headerStyles.navList}>
-        <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/'>Home</Link></li>
-        <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/about'>About</Link></li>
-        <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/projects'>Projects</Link></li>
-        <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/contact'>Contact</Link></li>
-        <li><Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to='/blog'>Blog</Link></li>
-      </ul>
-    </header>
+        <button
+          className={`button navbar-burger ${isActive ? 'is-active' : ''}`}
+          data-target='navMenu'
+          onClick={toggleNavbar}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+      <div className={`navbar-menu ${isActive ? 'is-active' : ''}`} id='navMenu'>
+
+        <div className='navbar-end'>
+          <Link className='navbar-item' to='/'>Home</Link>
+          <Link className='navbar-item' to='/about'>About</Link>
+          <Link className='navbar-item' to='/projects'>Projects</Link>
+        </div>
+      </div>
+    </nav>
   )
 }
 export default Header
