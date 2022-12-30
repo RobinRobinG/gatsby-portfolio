@@ -16,7 +16,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "bulma": "^0.7.4",
-    "gatsby": "^2.3.32",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sass": "^2.0.11",
